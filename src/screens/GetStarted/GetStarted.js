@@ -4,7 +4,7 @@ import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
 import IL_GetStarted_PNG from '../../res/images/Illustrations/il_getStarted.png';
 
-const GetStarted = (props) => {
+const GetStarted = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image source={IL_GetStarted_PNG} style={styles.image} />
@@ -13,7 +13,7 @@ const GetStarted = (props) => {
         <Text style={styles.second_text}>Necessary</Text>
       </View>
         <Gap height={90}/>
-        <Button text='Get Started' onPress={() => props.navigation.navigate('Home')}/>
+        <Button text='Get Started' onPress={() => navigation.navigate('MainApp')}/>
     </View>
   );
 };
