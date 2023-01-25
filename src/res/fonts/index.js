@@ -1,8 +1,8 @@
 export const fonts = {
-  Light: 'Poppins-Light',
-  Medium: 'Poppins-Medium',
-  Regular: 'Poppins-Regular',
-  Black: 'Poppins-Black',
-  SemiBold: 'Poppins-SemiBold',
-  Bold: 'Poppins-Bold',
+  Light: 'Nunito-Light',
+  Medium: 'Nunito-Medium',
+  Regular: 'Nunito-Regular',
+  Black: 'Nunito-Black',
+  SemiBold: 'Nunito-SemiBold',
+  Bold: 'Nunito-Bold',
 };

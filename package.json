@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "react-native start --watchman",
     "test": "jest"
   },
   "dependencies": {
@@ -19,7 +19,8 @@
     "react-native-safe-area-context": "^4.5.0",
     "react-native-screens": "^3.19.0",
     "react-native-svg": "^13.7.0",
-    "react-native-svg-transformer": "^1.0.0"
+    "react-native-svg-transformer": "^1.0.0",
+    "watchman": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -1,7 +1,8 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
+import {fonts} from '../../res';
 import IL_GetStarted_PNG from '../../res/images/Illustrations/il_getStarted.png';
 
 const GetStarted = ({navigation}) => {
@@ -12,8 +13,11 @@ const GetStarted = ({navigation}) => {
         <Text style={styles.first_text}>Shop Your Daily </Text>
         <Text style={styles.second_text}>Necessary</Text>
       </View>
-        <Gap height={90}/>
-        <Button text='Get Started' onPress={() => navigation.navigate('MainApp')}/>
+      <Gap height={90} />
+      <Button
+        text="Get Started"
+        onPress={() => navigation.navigate('MainApp')}
+      />
     </View>
   );
 };
@@ -36,13 +40,13 @@ const styles = StyleSheet.create({
   },
   first_text: {
     color: '#0FA956',
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 35,
+    fontFamily: fonts.Bold,
   },
   second_text: {
     color: '#0FA956',
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 35,
+    fontFamily: fonts.Bold,
   },
 });
 

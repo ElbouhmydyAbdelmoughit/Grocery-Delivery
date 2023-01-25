@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { fonts } from '../../../res';
 
 const Button = ({text, onPress}) => {
   return (
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   btn_text: {
     color: 'white',
     fontSize: 24,
-    fontWeight: 'bold',
+    fontFamily: fonts.Bold
   },
 });
 
