@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import {IC_Back, IC_Cart, IC_Drawer} from '../../../res';
+import {IC_Back, IC_Cart, IC_Drawer} from '../../../res/images';
 
 const Header = ({drawer, back, cart, onPress}) => {
   if (drawer) {
@@ -37,8 +37,6 @@ const Header = ({drawer, back, cart, onPress}) => {
   );
 };
 
-export default Header;
-
 const styles = StyleSheet.create({
   wrapperHeader: {
     flexDirection: 'row',
@@ -48,3 +46,5 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 });
+
+export default Header;

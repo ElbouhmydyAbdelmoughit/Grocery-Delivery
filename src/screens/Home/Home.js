@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, useColorScheme, StatusBar} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Header from '../../components/molecules/Header/Header';
 import {
   fonts,
   IC_Bakery,
@@ -79,6 +80,9 @@ const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <View style={styles.flex1}>
+        <Header drawer />
+      </View>
     </SafeAreaView>
   );
 };
@@ -87,6 +91,9 @@ const styles = StyleSheet.create({
   container:{
     flex:1
   },
+  flex1:{
+    flex:1
+  }
   
 });
 
