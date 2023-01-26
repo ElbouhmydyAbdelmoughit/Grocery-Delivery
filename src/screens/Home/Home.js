@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import Header from '../../components/molecules/Header/Header';
 import {
-  fonts,
   IC_Bakery,
   IC_Bakery2,
   IC_Drinks,
@@ -24,6 +23,10 @@ import {
   IL_Tomato_PNG,
 } from '../../res/images';
 import BoxItemCategories from '../../components/molecules/BoxItemCategories/BoxItamCaterories';
+import { fonts } from '../../res';
+import Gap from '../../components/atoms/Gap/Gap';
+
+
 
 const Home = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -141,7 +144,7 @@ const Home = ({navigation}) => {
           />
         </ScrollView>
       </View>
-      <Gap height={24} />
+       <Gap height={24} />
     </SafeAreaView>
   );
 };
@@ -168,7 +171,7 @@ const styles = StyleSheet.create({
   titleCategories: {
     fontSize: 18,
     fontFamily: fonts.SemiBold,
-    color: colors.primary,
+    color: "#0FA956",
     padding: 20,
   },
   scrollViewCategories: {
