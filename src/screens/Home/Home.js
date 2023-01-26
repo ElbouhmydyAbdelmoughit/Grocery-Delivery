@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   ScrollView,
   TextInput,
+  TouchableOpacity
 } from 'react-native';
 import Header from '../../components/molecules/Header/Header';
 import {
@@ -21,12 +22,11 @@ import {
   IL_Grapes_PNG,
   IL_Greentea_PNG,
   IL_Tomato_PNG,
-} from '../../res/images';
+} from '../../res/images/Illustrations';
 import BoxItemCategories from '../../components/molecules/BoxItemCategories/BoxItamCaterories';
-import { fonts } from '../../res';
+import {fonts} from '../../res';
 import Gap from '../../components/atoms/Gap/Gap';
-
-
+import BoxItemTopProduct from '../../components/molecules/BoxItemTopProdut/BoxItemTopProduct';
 
 const Home = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -95,58 +95,82 @@ const Home = ({navigation}) => {
       <View style={styles.flex1}>
         {/* Header */}
         <Header drawer />
-        <ScrollView>
-          {/* Search */}
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {/* search */}
           <View style={styles.SearchHeader}>
             <View style={styles.SearchView}>
-              <TextInput placeholder="Search" style={styles.InputSearch} />
+              <TextInput placeholder="Search" />
               <IC_Search />
+            </View>
+          </View>
+          {/* categories */}
+          <View>
+            <Text style={styles.titleCategories}>Categories</Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              style={styles.scrollViewCategories}>
+              <BoxItemCategories
+                icon={<IC_Fruits />}
+                color="rgba(169, 178, 169, 0.5)"
+                text="Fruits"
+                onPress={() => navigation.navigate('Categories', 'Fruits')}
+              />
+              <BoxItemCategories
+                icon={<IC_Vegetables />}
+                color="rgba(233, 255, 210, 0.5)"
+                text="Vegetables"
+                onPress={() => navigation.navigate('Categories', 'Vegetables')}
+              />
+              <BoxItemCategories
+                icon={<IC_Drinks />}
+                color="rgba(140, 175, 53, 0.5)"
+                text="Drinks"
+                onPress={() => navigation.navigate('Categories', 'Drinks')}
+              />
+              <BoxItemCategories
+                icon={<IC_Bakery />}
+                color="rgba(214, 255, 218, 0.5)"
+                text="Bakery"
+                onPress={() => navigation.navigate('Categories', 'Bakery')}
+              />
+              <BoxItemCategories
+                icon={<IC_Bakery2 />}
+                color="rgba(255, 250, 204, 0.5)"
+                text="Bakery"
+                onPress={() => navigation.navigate('Categories', 'Bakery')}
+              />
+            </ScrollView>
+          </View>
+          <Gap height={24} />
+          {/* top products */}
+          <View>
+            <View style={styles.wrapperHeadTopProducts}>
+              <Text style={styles.tittleTopProducts}>Top Products</Text>
+              <TouchableOpacity>
+                <Text style={styles.textSeeAll}>See All</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.sectionBoxTopProduct}>
+              {dataTopProducts.map((item, index) => {
+                return (
+                  <BoxItemTopProduct
+                    key={index}
+                    bgColor={item.bgColor}
+                    icon={item.icon}
+                    text={item.name}
+                    price={item.price}
+                    onPress={() => navigation.navigate('Detail', item)}
+                  />
+                );
+              })}
             </View>
           </View>
         </ScrollView>
       </View>
-      {/* categories */}
-      <View>
-        <Text style={styles.titleCategories}>Categories</Text>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={styles.scrollViewCategories}>
-          <BoxItemCategories
-            icon={<IC_Fruits />}
-            color="rgba(169, 178, 169, 0.5)"
-            text="Fruits"
-            onPress={() => navigation.navigate('Categories', 'Fruits')}
-          />
-          <BoxItemCategories
-            icon={<IC_Vegetables />}
-            color="rgba(233, 255, 210, 0.5)"
-            text="Vegetables"
-            onPress={() => navigation.navigate('Categories', 'Vegetables')}
-          />
-          <BoxItemCategories
-            icon={<IC_Drinks />}
-            color="rgba(140, 175, 53, 0.5)"
-            text="Drinks"
-            onPress={() => navigation.navigate('Categories', 'Drinks')}
-          />
-          <BoxItemCategories
-            icon={<IC_Bakery />}
-            color="rgba(214, 255, 218, 0.5)"
-            text="Bakery"
-            onPress={() => navigation.navigate('Categories', 'Bakery')}
-          />
-          <BoxItemCategories
-            icon={<IC_Bakery2 />}
-            color="rgba(255, 250, 204, 0.5)"
-            text="Bakery"
-            onPress={() => navigation.navigate('Categories', 'Bakery')}
-          />
-        </ScrollView>
-      </View>
-       <Gap height={24} />
     </SafeAreaView>
   );
+
 };
 
 const styles = StyleSheet.create({
@@ -171,11 +195,33 @@ const styles = StyleSheet.create({
   titleCategories: {
     fontSize: 18,
     fontFamily: fonts.SemiBold,
-    color: "#0FA956",
+    color: '#0FA956',
     padding: 20,
   },
   scrollViewCategories: {
     paddingLeft: 20,
+  },
+  wrapperHeadTopProducts: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    marginBottom: 10,
+  },
+  tittleTopProducts: {
+    color: "#0FA956",
+    fontFamily: fonts.SemiBold,
+    fontSize: 20,
+  },
+  textSeeAll: {
+    color: "black",
+    fontFamily: fonts.Medium,
+    fontSize: 12,
+  },
+  sectionBoxTopProduct: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
   },
 });
 
