@@ -10,13 +10,13 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Header from '../../components/molecules/Header/Header';
 import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
 import BoxRelatedItems from '../../components/molecules/BoxRelatedItems/BoxRelatedItems';
 import Counter from '../../components/molecules/Counter/Counter';
 import { fonts } from '../../res';
 import {
-  IL_Cauliflawer_PNG,
   IL_Grapes_PNG,
   IL_Greentea_PNG,
   IL_Tomato_PNG,
