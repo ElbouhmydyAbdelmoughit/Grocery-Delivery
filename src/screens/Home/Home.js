@@ -22,7 +22,7 @@ import {
   IL_Grapes_PNG,
   IL_Greentea_PNG,
   IL_Tomato_PNG,
-} from '../../res/images/Illustrations';
+} from '../../res/images';
 import BoxItemCategories from '../../components/molecules/BoxItemCategories/BoxItamCaterories';
 import {fonts} from '../../res';
 import Gap from '../../components/atoms/Gap/Gap';
