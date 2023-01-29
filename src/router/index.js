@@ -7,6 +7,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import BottomNavigator from '../components/molecules/ButtonNavigator/BottomNavigator';
 import Categories from '../screens/Categories/Categories';
 import Detail from '../screens/Detail/Detail';
+import Login from '../screens/Login/Login';
+import Register from '../screens/Register/Register';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,6 +36,8 @@ function MainApp() {
   );
 }
 
+
+
 const Router = () => {
   return (
     <Stack.Navigator>
@@ -55,6 +59,16 @@ const Router = () => {
       <Stack.Screen
         name="Detail"
         component={Detail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{headerShown: false}}
+      />
+       <Stack.Screen
+        name="Register"
+        component={Register}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

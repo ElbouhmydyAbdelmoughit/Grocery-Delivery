@@ -1,14 +1,20 @@
-import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import React from 'react';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import Header from '../../components/molecules/Header/Header';
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <View>
-      <Text>Login</Text>
+      <Header onPress={() => navigation.goBack()} />
+      <View style={styles.container}>
+        <Text>Login</Text>
+      </View>
     </View>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {},
+});
 
-export default Login
+export default Login;
