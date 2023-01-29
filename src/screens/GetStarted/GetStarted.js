@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
+import Link from '../../components/atoms/Link/Link';
 import {fonts} from '../../res';
 import IL_GetStarted_PNG from '../../res/images/Illustrations/il_getStarted.png';
 
@@ -18,6 +19,8 @@ const GetStarted = ({navigation}) => {
         text="Get Started"
         onPress={() => navigation.navigate('MainApp')}
       />
+      <Gap height={10}/>
+     <Link text='login' to="Login" />
     </View>
   );
 };
