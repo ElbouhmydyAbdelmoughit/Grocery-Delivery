@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 import {
   Image,
@@ -15,7 +14,7 @@ import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
 import BoxRelatedItems from '../../components/molecules/BoxRelatedItems/BoxRelatedItems';
 import Counter from '../../components/molecules/Counter/Counter';
-import { fonts } from '../../res';
+import {fonts} from '../../res';
 import {
   IL_Grapes_PNG,
   IL_Greentea_PNG,
@@ -101,7 +100,9 @@ const Detail = ({route, navigation}) => {
           </View>
           {/* button add to cart */}
           <Gap height={50} />
-          <Button text="Add to cart" />
+          <View style={styles.addToCart_btn} >
+            <Button text="Add To Cart" />
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
   content: {
     width: '100%',
     height: '100%',
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     marginTop: 30,
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
   price: {
     fontFamily: fonts.Regular,
     fontSize: 14,
-    color: "black",
+    color: 'black',
   },
   desc: {
     paddingHorizontal: 20,
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
   titleRelatedItems: {
     fontFamily: fonts.SemiBold,
     fontSize: 14,
-    color: "#0FA956",
+    color: '#0FA956',
     paddingHorizontal: 20,
   },
   wrapperBoxRelatedItems: {
@@ -167,4 +168,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     paddingLeft: 20,
   },
+  addToCart_btn:{
+    paddingHorizontal:10
+  }
 });
