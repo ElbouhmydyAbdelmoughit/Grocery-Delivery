@@ -6,32 +6,33 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  Image
 } from 'react-native';
-import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
 import Header from '../../components/molecules/Header/Header';
 import {fonts} from '../../res';
+import {
+  IM_Login
+} from '../../res/images/Illustrations';
 
 const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header onPress={() => navigation.goBack()} />
-      <View style={styles.login_view}>
-        <Text style={styles.login}>Login</Text>
-      </View>
+      <Image style={{width:"100%", height:200}}  source={IM_Login} />
       <View style={styles.header}>
         <View style={styles.title_view}>
           <Text style={styles.login_title}>Welcome Back !</Text>
           <Text style={styles.sub_login_title}>login to your account</Text>
         </View>
         <TextInput style={styles.email_input} placeholder="Enter Email" />
-        <Gap height={30} />
+        <Gap height={20} />
         <TextInput
           style={styles.email_input}
           placeholder="Enter Password"
           secureTextEntry={true}
         />
-        <Gap height={40} />
+        <Gap height={30} />
         <View style={{alignItems: 'center'}}>
           <TouchableOpacity
             style={styles.button}
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '10%',
-    marginBottom: '30%',
+    marginBottom: '25%',
   },
   login_title: {
     color: '#0FA956',
