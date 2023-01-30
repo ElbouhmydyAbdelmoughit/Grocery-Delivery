@@ -1,7 +1,5 @@
-import {Link} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
 import {fonts} from '../../res';
 import IL_GetStarted_PNG from '../../res/images/Illustrations/il_getStarted.png';
@@ -15,9 +13,11 @@ const GetStarted = ({navigation}) => {
         <Text style={styles.second_text}>Necessary</Text>
       </View>
       <Gap height={90} />
-      <View style={{alignItems:"center"}}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.text_button}>Register</Text>
+      <View style={{alignItems: 'center'}}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.text_button}>Login</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -50,17 +50,17 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontFamily: fonts.Bold,
   },
-  button:{
-    paddingHorizontal:131,
-    paddingVertical:10,
-    backgroundColor:"#0FA956",
-    borderRadius:5
+  button: {
+    paddingHorizontal: 146,
+    paddingVertical: 10,
+    backgroundColor: '#0FA956',
+    borderRadius: 5,
   },
-  text_button:{
-    color:"white",
-    fontFamily:fonts.Regular,
-    fontSize:24
-  }
+  text_button: {
+    color: 'white',
+    fontFamily: fonts.Regular,
+    fontSize: 24,
+  },
 });
 
 export default GetStarted;
