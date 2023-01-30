@@ -11,18 +11,19 @@ import {
 import Gap from '../../components/atoms/Gap/Gap';
 import Header from '../../components/molecules/Header/Header';
 import {fonts} from '../../res';
-import {IM_Login} from '../../res/images/Illustrations';
+import {IM_Register} from '../../res/images/Illustrations';
 
 const Register = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header onPress={() => navigation.goBack()} />
-      <Image style={{width: '100%', height: 200}} source={IM_Login} />
+      <Image style={{width: '100%', height: 200}} source={IM_Register} />
       <View style={styles.header}>
         <View style={styles.title_view}>
-          <Text style={styles.login_title}>Welcome Back !</Text>
-          <Text style={styles.sub_login_title}>login to your account</Text>
+          <Text style={styles.text_title} >Welcome</Text>
         </View>
+        <TextInput style={styles.full_name_input} placeholder="Enter Full Name" />
+        <Gap height={20} />
         <TextInput style={styles.email_input} placeholder="Enter Email" />
         <Gap height={20} />
         <TextInput
@@ -30,18 +31,19 @@ const Register = ({navigation}) => {
           placeholder="Enter Password"
           secureTextEntry={true}
         />
+        <Gap height={20} />
+        <TextInput
+          style={styles.email_input}
+          placeholder="Confirm Password"
+          secureTextEntry={true}
+        />
         <Gap height={30} />
         <View style={{alignItems: 'center'}}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('Login')}>
+            onPress={() => navigation.navigate('register')}>
             <Text style={styles.text_button}>Register</Text>
           </TouchableOpacity>
-        </View>
-        <View style={styles.view_register}>
-          <Text style={styles.text_register}>
-            Have Account ? <Link to={{screen: 'Register'}}> Login </Link>{' '}
-          </Text>
         </View>
       </View>
     </View>
@@ -53,12 +55,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgba(187, 208, 136, 0.5)',
   },
-  login_view: {
+  register_view: {
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: '10%',
   },
-  login: {
+  register: {
     fontFamily: fonts.Bold,
     fontSize: 55,
     color: '#404258',
@@ -70,6 +72,11 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 100,
     height: '100%',
   },
+  full_name_input:{
+    backgroundColor: '#F5F5F5',
+    borderRadius: 30,
+    paddingHorizontal: 20,
+  },
   email_input: {
     backgroundColor: '#F5F5F5',
     borderRadius: 30,
@@ -78,15 +85,20 @@ const styles = StyleSheet.create({
   title_view: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '10%',
-    marginBottom: '25%',
+    marginTop: 10,
+    marginBottom: 45,
   },
-  login_title: {
+  text_title:{
+    fontFamily:fonts.Bold,
+    fontSize:30,
+    color:"#0FA956"
+  },
+  register_title: {
     color: '#0FA956',
     fontFamily: fonts.Bold,
     fontSize: 30,
   },
-  sub_login_title: {
+  sub_register_title: {
     color: '#404258',
     fontSize: 16,
     fontFamily: fonts.Regular,
@@ -102,15 +114,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontFamily: fonts.SemiBold,
     fontSize: 24,
-  },
-  view_register: {
-    alignItems: 'flex-end',
-    marginTop: 15,
-  },
-  text_register: {
-    color: '#404258',
-    fontFamily: fonts.Regular,
-    fontSize: 16,
   },
 });
 

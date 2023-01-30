@@ -8,6 +8,7 @@ import IL_Brinjal from './il_brinjal.png';
 import IL_RedOnion from './il_redonion.png';
 import IL_Brokoli from './il_brokoli.png';
 import IM_Login from "./IM_Login.png"
+import IM_Register from "./IM_Login.png"
 
 export {
   IL_GetStarted_PNG,
@@ -19,5 +20,6 @@ export {
   IL_Brinjal,
   IL_RedOnion,
   IL_Brokoli,
-  IM_Login
+  IM_Login,
+  IM_Register
 };
