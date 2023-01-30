@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   btn_text: {
+    alignItems:'center',
     color: 'white',
     fontSize: 24,
     fontFamily: fonts.Bold

@@ -1,6 +1,6 @@
 import {Link} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, Text, View, Linking} from 'react-native';
+import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Button from '../../components/atoms/Button/Button';
 import Gap from '../../components/atoms/Gap/Gap';
 import {fonts} from '../../res';
@@ -15,15 +15,10 @@ const GetStarted = ({navigation}) => {
         <Text style={styles.second_text}>Necessary</Text>
       </View>
       <Gap height={90} />
-      <Button
-        text="Get Started"
-        onPress={() => navigation.navigate('MainApp')}
-      />
-      <Gap height={20} />
-      <View style={styles.login_view}>
-        <Text style={styles.login_text}>
-          Want To Login <Link to={{screen: 'Login'}}> Click Here </Link> ?
-        </Text>
+      <View style={{alignItems:"center"}}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.text_button}>Register</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -55,17 +50,17 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontFamily: fonts.Bold,
   },
-  login_view:{
-    paddingHorizontal:5,
-    alignItems: 'flex-end',
-    justifyContent: 'center',
+  button:{
+    paddingHorizontal:131,
+    paddingVertical:10,
+    backgroundColor:"#0FA956",
+    borderRadius:5
   },
-  login_text: {
-    
-    fontFamily: fonts.Regular,
-    color:"black",
-    fontSize: 16
-  },
+  text_button:{
+    color:"white",
+    fontFamily:fonts.Regular,
+    fontSize:24
+  }
 });
 
 export default GetStarted;
