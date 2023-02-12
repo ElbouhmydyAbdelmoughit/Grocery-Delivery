@@ -36,7 +36,7 @@ const Login = ({navigation}) => {
         <View style={{alignItems: 'center'}}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('Login')}>
+            onPress={() => navigation.navigate('MainApp')}>
             <Text style={styles.text_button}>Login</Text>
           </TouchableOpacity>
         </View>

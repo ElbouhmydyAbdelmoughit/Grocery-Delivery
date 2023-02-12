@@ -1,5 +1,4 @@
-import {Link} from '@react-navigation/native';
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -14,26 +13,56 @@ import {fonts} from '../../res';
 import {IM_Register} from '../../res/images/Illustrations';
 
 const Register = ({navigation}) => {
+  const [register, setRegister] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleChange = (name,value) => {
+    setRegister({...register, [name]:value});
+  };
+
+  const handleSubmit  = (e)=>{
+    e.preventDefault();
+    console.log(register)
+  }
+
   return (
     <View style={styles.container}>
       <Header onPress={() => navigation.goBack()} />
       <Image style={{width: '100%', height: 200}} source={IM_Register} />
       <View style={styles.header}>
         <View style={styles.title_view}>
-          <Text style={styles.text_title} >Welcome</Text>
+          <Text style={styles.text_title}>Welcome</Text>
         </View>
-        <TextInput style={styles.full_name_input} placeholder="Enter Full Name" />
-        <Gap height={20} />
-        <TextInput style={styles.email_input} placeholder="Enter Email" />
+        <TextInput
+          style={styles.full_name_input}
+          value={register.fullName}
+          onChangeText={(text) => handleChange('fullName', text)}
+          placeholder="Enter Full Name"
+        />
         <Gap height={20} />
         <TextInput
           style={styles.email_input}
+          value={register.email}
+          onChangeText={(text) => handleChange('email', text)}
+          placeholder="Enter Email"
+        />
+        <Gap height={20} />
+        <TextInput
+          style={styles.email_input}
+          value={register.password}
+          onChangeText={(text) => handleChange('password', text)}
           placeholder="Enter Password"
           secureTextEntry={true}
         />
         <Gap height={20} />
         <TextInput
           style={styles.email_input}
+          value={register.confirmPassword}
+          onChangeText={(text) => handleChange('confirmPassword', text)}
           placeholder="Confirm Password"
           secureTextEntry={true}
         />
@@ -41,7 +70,7 @@ const Register = ({navigation}) => {
         <View style={{alignItems: 'center'}}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('register')}>
+            onPress={handleSubmit }>
             <Text style={styles.text_button}>Register</Text>
           </TouchableOpacity>
         </View>
@@ -72,7 +101,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 100,
     height: '100%',
   },
-  full_name_input:{
+  full_name_input: {
     backgroundColor: '#F5F5F5',
     borderRadius: 30,
     paddingHorizontal: 20,
@@ -88,10 +117,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 45,
   },
-  text_title:{
-    fontFamily:fonts.Bold,
-    fontSize:30,
-    color:"#0FA956"
+  text_title: {
+    fontFamily: fonts.Bold,
+    fontSize: 30,
+    color: '#0FA956',
   },
   register_title: {
     color: '#0FA956',
